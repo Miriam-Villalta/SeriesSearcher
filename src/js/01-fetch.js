@@ -8,7 +8,7 @@ let dataFilms = [];
 function addListenerSearchClick() {
   const userSearch = inputValue.value;
   dataFilms = [];
-  fetch(`http://api.tvmaze.com/search/shows?q=${userSearch}`)
+  fetch(`https://api.tvmaze.com/search/shows?q=${userSearch}`)
     .then((response) => response.json())
     .then((data) => {
       data.forEach((element) => {
