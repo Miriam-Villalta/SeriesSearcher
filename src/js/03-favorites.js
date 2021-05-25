@@ -3,7 +3,6 @@ let newFav = [];
 
 function addListenersToCardsFilms() {
   const allFilms = document.querySelectorAll(".js-cards");
-  console.log(allFilms);
   for (const card of allFilms) {
     card.addEventListener("click", handlerFavorite);
   }
@@ -29,7 +28,6 @@ function handlerFavorite(event) {
     newFav.splice(idM, 1);
   }
   localStorage.setItem("films", JSON.stringify(newFav)); //dentro newFav
-  console.log(newFav);
 
   //pintar contenido en pelis favoritas
   let newImage = "";
@@ -52,11 +50,3 @@ function handlerFavorite(event) {
   filmsFav.innerHTML =
     '<h3 class="favorite__title">Pelis favoritas</h3>' + filmListContent; //es el que pinta el contenido
 }
-
-//1- meter solo una peli, no todo el listado
-//3- localStorage
-//4- revisar busquedas
-
-//cuando haga click en li serie, cambia de color y se añade al div de favoritos (array) X
-
-//tienen que verse aunque se realice otra buqueda

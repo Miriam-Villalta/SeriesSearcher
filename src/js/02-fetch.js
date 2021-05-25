@@ -11,8 +11,6 @@ function addListenerSearchClick() {
   fetch(`http://api.tvmaze.com/search/shows?q=${userSearch}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log("Han llegado");
-      console.log(data);
       data.forEach((element) => {
         dataFilms.push(element.show);
       });
@@ -43,6 +41,3 @@ function renderFilms(dataFilms) {
   filmList.innerHTML = filmListContent; //es el que pinta el contenido
   addListenersToCardsFilms(); //favorito
 }
-
-console.log("siguiente linea");
-console.log(filmList);
