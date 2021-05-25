@@ -1,14 +1,14 @@
 "use strict";
 const filmList = document.querySelector(".js-films");
-let inputValue = document.querySelector(".js-search"); //input texto
+const inputValue = document.querySelector(".js-search"); //input texto
 const searchBtn = document.querySelector(".js-btn"); //boton
 searchBtn.addEventListener("click", addListenerSearchClick);
 let dataFilms = [];
 
 function addListenerSearchClick() {
-  inputValue = inputValue.value;
+  const userSearch = inputValue.value;
   dataFilms = [];
-  fetch(`http://api.tvmaze.com/search/shows?q=${inputValue}`)
+  fetch(`http://api.tvmaze.com/search/shows?q=${userSearch}`)
     .then((response) => response.json())
     .then((data) => {
       console.log("Han llegado");
