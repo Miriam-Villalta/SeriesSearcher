@@ -34,6 +34,7 @@ function renderFilms(dataFilms) {
             <div class="films-each__container">
               <img src="${newImage}" alt="" class="films-each__container--photo">
               <h3 class="films-each__container--text">${dataFilms[i].name}</h3>
+              <h4>Time: ${dataFilms[i].schedule.time}</h4>
             </div>
          </li>`;
   }
@@ -41,3 +42,12 @@ function renderFilms(dataFilms) {
   filmList.innerHTML = filmListContent; //es el que pinta el contenido
   addListenersToCardsFilms(); //favorito
 }
+
+const logBtn = document.querySelector(".log-button");
+function nameLog() {
+  for (let i = 0; i < dataFilms.length; i++) {
+    console.log(dataFilms[i].name);
+  }
+}
+
+logBtn.addEventListener("click", nameLog);
